@@ -20,7 +20,7 @@
 //
 // High-level Consumer
 //
-// * Decide if you want to read messages and events by calling `.Poll()` or 
+// * Decide if you want to read messages and events by calling `.Poll()` or
 // the deprecated option of using the `.Events()` channel. (If you want to use
 // `.Events()` channel then set `"go.events.channel.enable": true`).
 //
@@ -253,9 +253,10 @@ package kafka
 
 import (
 	"fmt"
-	// Make sure librdkafka_vendor/ sub-directory is included in vendor pulls.
-	_ "github.com/confluentinc/confluent-kafka-go/kafka/librdkafka_vendor"
 	"unsafe"
+
+	// Make sure librdkafka_vendor/ sub-directory is included in vendor pulls.
+	_ "github.com/kkHAIKE/confluent-kafka-go/kafka/librdkafka_vendor"
 )
 
 /*

@@ -1,6 +1,16 @@
 Confluent's Golang Client for Apache Kafka<sup>TM</sup>
 =====================================================
 
+## build on macosx
+1. `brew install openssl@1.1 zstd`
+2. `brew link openssl@1.1 --force`
+3. cd in librdkafka, and make librdkafka-static.a
+```
+STATIC_LIB_libssl=/opt/homebrew/opt/openssl@1.1/lib/libssl.a STATIC_LIB_libcrypto=/opt/homebrew/opt/openssl@1.1/lib/libcrypto.a STATIC_LIB_libzstd=/opt/homebrew/opt/zstd/lib/libzstd.a ./configure --enable-zlib --enable-zstd --enable-ssl --enable-sasl --enable-static
+```
+4. `brew unlink openssl@1.1`
+5. `lipo -create librdkafka_darwin.a.old librdkafka-static.a -output librdkafka_darwin.a`
+
 **confluent-kafka-go** is Confluent's Golang client for [Apache Kafka](http://kafka.apache.org/) and the
 [Confluent Platform](https://www.confluent.io/product/compare/).
 
